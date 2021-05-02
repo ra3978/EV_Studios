@@ -21,10 +21,10 @@ class AnimatedContainerDemo extends StatefulWidget {
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 
   // state variables                           <-- state
-  final _myDuration = Duration(seconds: 1);
-  var _myValue = Color(0xFF00BB00);
-  var _myNewValue = Color(0xFF0000FF);
-  var _myNewValue2 = Color(0xFF00BB00);
+  final _myDuration = Duration(seconds: 30);
+  var _myValue = 0.0;
+  var _myNewValue = 20.0;
+  var _myNewValue2 = 0.0;
 
 
   @override
@@ -36,8 +36,11 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 
           // Update this code                  <-- AnimatedContainer
           AnimatedContainer(
-            color: _myValue,
             duration: _myDuration,
+            width: 50,
+            height: 50,
+            transform: Matrix4.skew(_myValue, _myValue),
+            color: Color(0xFF0099EE),
             child: SomeOtherWidget(),
           ),
         ),
